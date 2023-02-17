@@ -23,7 +23,7 @@ putchar(numR);
 if (!(
 numR == 57 && numM == 56 && numL == 55))
 {
-putchar('.');
+putchar(',');
 putchar(' ');
 }
 }

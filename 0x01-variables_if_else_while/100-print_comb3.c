@@ -21,7 +21,7 @@ int main(void)
 				putchar(numR);
 				if (!(numR == 57 && numL == 56))
 				{
-					putchar('.');
+					putchar(',');
 					putchar(' ');
 				}
 			}

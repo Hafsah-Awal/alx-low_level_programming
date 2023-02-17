@@ -8,20 +8,25 @@ int main(void)
 {
 	int numR;
 	int numL;
-	int minL = 48;
+	int numM;
 
 	for (numL = 48; numL <= 57; numL++)
 	{
-		for (numR = minL++; numR <= 57; numR++)
+		for (numM = numL + 1; numM <= 57; numM++)
 		{
-			if (numR != numL)
+			for (numR = numM + 1; numR <= 57; numR++)
 			{
-				putchar(numL);
-				putchar(numR);
-				if (!(numR == 57 && numL == 56))
+				if (numM != numR)
 				{
-					putchar('.');
+					putchar(numL);
+					putchar(numM);
+					putchar(numR);
+					if (!(
+								numR == 57 && numM == 56 && numL == 55))
+					{
+						putchar('.');
 						putchar(' ');
+					}
 				}
 			}
 		}

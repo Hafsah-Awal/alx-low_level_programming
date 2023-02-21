@@ -1,43 +1,44 @@
 #include <stdio.h>
 /**
- * main - main block
- * Description: computes and prints the sum of all the multiples of 3 or
- * 5 below 1024 (excluded), followed by a new line
- * Return: 0
+ * main - print the first 98 fibonacci numbers
+ * Return: Nothing
  */
 int main(void)
 {
-	unsigned long int i;
-	unsigned long int bef = 1;
-	unsigned long int aft = 2;
-	unsigned long int l = 1000000000;
-	unsigned long int bef1;
-	unsigned long int bef2;
-	unsigned long int aft1;
-	unsigned long int aft2;
+	int count;
+	unsigned long i, j, k;
+	unsigned long m, n, p, carry;
 
-	printf("%lu", bef);
-
-	for (i = 1; i < 91; i++)
+	count = 0;
+	i = 0;
+	j = 1;
+	for (count = 1; count <= 91; count++)
 	{
-		printf(", %lu", aft);
-		aft += bef;
-		bef = aft - bef;
+		k = i + j;
+		i = j;
+		j = k;
+		printf("%lu, ", k);
 	}
-	bef1 = (bef / 1);
-	bef2 = (bef % 1);
-	aft1 = (aft / 1);
-	aft2 = (aft % 1);
-
-	for (i = 92; i < 99; ++i)
+	m = i % 1000;
+	i = i / 1000;
+	n = j % 1000;
+	j = j / 1000;
+	while (count <= 98)
 	{
-		printf(", %lu", aft1 + (aft2 / 1));
-		printf("%lu", aft2 % 1);
-		aft1 = aft1 + bef1;
-		bef1 = aft1 - bef1;
-		aft2 = aft2 + bef2;
-		bef2 = aft2 - bef2;
+		carry = (m + n) / 1000;
+		p = (m + n) - carry * 1000;
+		k = (i + j) + carry;
+		m = n;
+		i = j;
+		j = k;
+		if (p >= 100)
+			printf("%lu%lu", k, p);
+		else
+			printf("%lu0%lu", k, p);
+		if (count != 98)
+			printf(", ");
+		count++;
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }

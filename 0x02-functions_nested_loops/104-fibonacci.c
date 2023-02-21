@@ -29,6 +29,7 @@ int main(void)
 		p = (m + n) - carry * 1000;
 		k = (i + j) + carry;
 		m = n;
+		n = p;
 		i = j;
 		j = k;
 		if (p >= 100)

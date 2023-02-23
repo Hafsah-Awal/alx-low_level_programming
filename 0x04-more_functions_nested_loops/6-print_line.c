@@ -3,18 +3,17 @@
 /**
  * print_line - Draws a straight line using a character _
  * @n: The number of _ characters to be printed out.
+ * Return: 0
  */
 
 void print_line(int n)
 {
-	int line;
+	int a = 0;
 
-	if (n > 0)
+	while (a < n && n > 0)
 	{
-		for (line = 0; line <= n; line++)
-		{
-			_putchar('_');
-		}
+		_putchar('_');
+		a++;
 	}
-		_putchar('\n');
+	_putchar('\n');
 }

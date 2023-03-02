@@ -40,8 +40,9 @@ void print_buffer(char *b, int size)
 			{
 				c = '.';
 			}
-			printf("\n");
-			o += 10;
+			printf("%c", c);
 		}
+		printf("\n");
+		o += 10;
 	}
 }
